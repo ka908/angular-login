@@ -1,0 +1,17 @@
+<form (ngSubmit)="onLogin()" novalidate>
+
+<!-- <form action="action_page.php" method="post"> -->
+<div class="main"><div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" id="username"        [(ngModel)]="username"
+     placeholder="Enter Username" name="uname" >
+     <p *ngIf="!username" style="color: red;">Username is required</p>
+     <p>Username: {{ username }}</p>
+    <label for="psw"><b>Password</b></label>    
+    <input type="password"   placeholder="Enter Password" [(ngModel)]="password" name="psw" >
+    <p *ngIf="!password" style="color: red;">password is required</p>
+    <p *ngIf="password.length<6" style="color: red;">password is weak</p>
+    <button (click)="onLogin()"  type="submit">Login</button>
+  </div></div>
+<!-- </form> -->
+</form>
